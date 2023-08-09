@@ -1,3 +1,6 @@
+# Source code Copyright © by Ulrich and David Greve (2005)
+
+
 def get_weekday_from_absdate(absdate):
   return absdate % 7
 

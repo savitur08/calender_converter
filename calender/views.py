@@ -26,7 +26,8 @@ def convert_gregorian_to_islamic_view(request):
     return render(request, 'calender/convert.html', {'form': form})
 
 
-
+# The logic and source code
+# Source code Copyright © by Ulrich and David Greve (2005)
 def convert_gregorian_to_hebrew_view(request):
     if request.method == "POST":
         form = GregorianDateForm(request.POST)
