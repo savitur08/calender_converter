@@ -1,0 +1,39 @@
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+.env
+
+# Temporary/IDE files
+*.log
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Django-specific files
+*.sqlite3
+*.pyc
+*.pyo
+db.sqlite3
+media/
+
+# Compiled files
+*.pyc
+*.pyo
+
+# Dependency folders
+__pycache__/
+env/
+lib/
+bin/
+
+# Logs
+logs/
+
+# Environment variables
+.env
+.env.*
