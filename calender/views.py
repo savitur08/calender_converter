@@ -58,7 +58,7 @@ def convert_gregorian_to_Indian_view(request):
             julian_date = gregorian_to_julian(g_year, g_month, g_day) #function in filesind.py file it's job is to convert the gregorian dates to julian day
             year,month,day= fromjd(julian_date)   # to parse it into a string 
             
-            return render(request, 'calender/resultheb.html', {'year': year,'month':month,'day':day})
+            return render(request, 'calender/resultind.html', {'year': year,'month':month,'day':day})
     else:
         form = GregorianDateForm()
     return render(request, 'calender/convert.html', {'form': form})
