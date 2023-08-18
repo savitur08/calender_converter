@@ -37,3 +37,9 @@ logs/
 # Environment variables
 .env
 .env.*
+
+# Ignore the virtual environment folder
+venv/
+
+# Environment-specific configuration files
+local_settings.py
