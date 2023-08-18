@@ -31,6 +31,11 @@ def hebrew_year_months(year):
     return 13
   else:
     return 12
+  
+
+
+  #This logic is taken from infrapink 
+  #https://github.com/Infrapink/calconv/blob/master/indian.py
 
 def _hebrew_calendar_elapsed_days(year):
   value = 235 * ((year-1) // 19)

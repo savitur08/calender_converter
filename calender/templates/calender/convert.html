@@ -1,15 +1,137 @@
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        /* Custom CSS to center content */
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Prevent scrollbars due to background image */
+        }
+
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://cdn.pixabay.com/photo/2023/06/04/23/08/desert-8041043_1280.jpg'); /* Set your wallpaper image URL */
+            background-size: cover;
+            z-index: -1; /* Place the background behind other elements */
+        }
+
+        .radio-container {
+            margin-bottom: 20px;
+        }
+
+        .transparent-box {
+            background-color: rgba(255, 255, 255, 0.5); /* Adjust the alpha value for transparency */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(130, 228, 132, 0.3); /* Shadow for the box */
+            border: 2px solid rgb(213, 194, 157);
+            
+        }
     
+    </style>
 </head>
 <body>
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Convert</button>
-</form>
+
+    <div class="background-container"></div>
+
+    <div class="container">
+        <div class="row">
+          <div class="col offset-md p-4 rounded shadow transparent-box">
+            <div class="container">
+                <div class="container radio-container" >
+        
+                    <div class="row">
+                        <div class="col-auto">
+                            <div class="form-check">
+                                <input type="radio" id="hebrew" name="color" value="red">
+                                <label for="red">Hebrew</label><br>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="col-auto">
+                                <input type="radio" id="islamic" name="color" value="red">
+                                <label for="red">Islamic Hijri</label><br>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="col-auto">
+                                <input type="radio" id="indian" name="color" value="red">
+                                <label for="red">Indian</label><br>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button class="btn btn-light" type="submit">Convert</button>
+                    </form>
+                </div>
+            
+            </div>
+        
+         
+        
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const hebrewCalendar = document.getElementById('hebrew');
+        const islamicCalendar = document.getElementById('islamic');
+        const indianCalendar = document.getElementById('indian');
+    
+        hebrewCalendar.addEventListener('change', () => {
+            if (hebrewCalendar.checked) {
+                window.location.href = "{% url 'hebrew' %}";
+            }
+        });
+    
+        islamicCalendar.addEventListener('change', () => {
+            if (islamicCalendar.checked) {
+                window.location.href = "{% url 'islamic' %}";
+            }
+        });
+
+        indianCalendar.addEventListener('change', () => {
+            if (indianCalendar.checked) {
+                window.location.href = "{% url 'india' %}";
+            }
+        });
+    });
+    </script>
 
 </body>
+</html>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </html>
